@@ -20,23 +20,8 @@ class AtibuteTableManager():
 
         #02 Delare empty list to store ids of data to remove
         list_of_data_to_remove = []
+        #
 
-        # 03 Loop by all feature
-        # for row in layer.getSelectedFeatures():
-        for row in layer.getFeatures():
-
-            # Declare id of feature (row)
-            id = row.id()
-
-            # Declare cuurent feature
-            feature = layer.getFeature(id)
-
-            # Declare feature to compare
-            # for instance: "ROWY", "LINIE"
-            feature_to_compare = (feature[field] or 0)
-
-            if feature_to_compare == value:
-                list_of_data_to_remove.append(id)
 
         # 04 Decalre layers capabilities
         capabilities = layer.dataProvider().capabilities()
