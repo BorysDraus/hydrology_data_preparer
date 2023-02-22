@@ -291,14 +291,6 @@ class HydrologyDataPreparer:
         layer.selectAll();
         box = layer.boundingBoxOfSelected()
 
-        xmin, xmax, ymin, ymax = box.xMinimum(), box.xMaximum(), box.yMinimum(), box.yMaximum()
-        xmin -= 100
-        xmax += 100
-        ymin -= 100
-        ymax += 100
-        box = QgsRectangle(xmin, ymin, xmax, ymax)
-        self.iface.mapCanvas().setExtent(box)
-        self.iface.mapCanvas().refresh()
 
         layer.removeSelection()
 
