@@ -330,6 +330,9 @@ class HydrologyDataPreparer:
 
             self.dockwidget.pushButton_zoom.clicked.connect(lambda: self.zoomToLayer('join_layer'))
 
+
+            print("XYZ")
+
 # pushButton_zoom
 
 

@@ -41,7 +41,7 @@ class AtibuteTableManager():
         # 04 Decalre layers capabilities
         capabilities = layer.dataProvider().capabilities()
 
-        sth = 'sth'
+
 
         # 05 Check if there is possibility to remove data from that layer
         if capabilities & QgsVectorDataProvider.DeleteFeatures:
@@ -49,3 +49,5 @@ class AtibuteTableManager():
             layer.dataProvider().deleteFeatures(list_of_data_to_remove)
             # Data refresh
             layer.triggerRepaint()
+
+
