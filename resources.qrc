@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/plugins/hydrology_data_preparer" >
+        <file>icon.png</file>
+    </qresource>
+</RCC>
