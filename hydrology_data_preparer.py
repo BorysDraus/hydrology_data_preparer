@@ -266,6 +266,7 @@ class HydrologyDataPreparer:
                         'OUTPUT': 'TEMPORARY_OUTPUT'})
         outputlayer = result['OUTPUT']
 
+
         result = processing.run("native:fixgeometries", {'INPUT': outputlayer, 'OUTPUT': 'memory:'})
         outputlayer = result['OUTPUT']
 
@@ -273,16 +274,18 @@ class HydrologyDataPreparer:
         join_layer.setName("join_layer")
 
 
-        #
-        canvas = self.iface.mapCanvas()
-        extent = join_layer.extent()
-        canvas.setExtent(extent)
-        canvas.refresh()
+
 
 
         AtibuteTableManager.removeDataFrolLayerByValue(self, join_layer, "KOD_2", "WIZURY")
 
-        self.zoomToLayer("join_layer")
+        list = ['CIEKI', 'ROWY', 'POTOK', 'RZEKA']
+        AtibuteTableManager.removeOpositeValuesFrolLayerByList(self, join_layer, "KOD_2", list)
+
+
+
+
+
 
     def zoomToLayer(self, layerName):
 
@@ -331,10 +334,9 @@ class HydrologyDataPreparer:
             self.dockwidget.pushButton_zoom.clicked.connect(lambda: self.zoomToLayer('join_layer'))
 
 
-            print("XYZ")
-            print("ZZZ")
 
-# pushButton_zoom
+
+
 
 
 
